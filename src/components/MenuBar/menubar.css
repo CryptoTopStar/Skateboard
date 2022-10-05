@@ -1,0 +1,126 @@
+.menubar {
+    background-color: #fff;
+    /* height: 100vh; */
+    height: calc(100vh - 87px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70px;
+    transition: all 0.3s;
+}
+
+.wid_25 {
+    width: 250px;
+    transition: all 0.5s;
+    z-index: 11;
+}
+
+ul {
+    list-style: none;
+}
+
+ul > li {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+ul > li > p {
+    margin-left: 15px;
+    font-size: 20px;
+    color: #333;
+    text-align: left;
+}
+
+ul > li:hover {
+    background-color: rgba(59,130,246,.3);
+}
+
+.list {
+    border-bottom: 1px solid #aaa;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.list > p {
+    width: 30px;
+    height: 2px;
+    background-color: #aaa;
+    margin-bottom: 5px;
+}
+
+.list > p:last-child {
+    margin-bottom: 0;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+.hidden_model {
+    left: 70px;
+    background-color: #eee;
+    /* height: 100vh; */
+    height: calc(100vh - 87px);
+    transition: all 0.5s;
+    display: none;
+}
+
+.wid_0 {
+    width: 0;
+    transition: all 0.5s;
+    left: -400px;
+}
+
+.close {
+    padding: 5px;
+    display: block !important;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    padding: 12.5px;
+    border-bottom: 1px solid #aaa;
+    width: 300px;
+    background-color: #fff;
+}
+
+.models {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 120px;
+    height: 150px;
+    display: inline-block;
+}
+
+.card > img {
+    width: 100%;
+    height: 100%;
+}
+
+.card_board, .card_wheel, .card_truck, .card_hardware, .card_griptape {
+    display: none;
+}
+
+.title:hover {
+    cursor: pointer;
+}
+
+.title > p {
+    display: none;
+}
+
+.show {
+    display: block;
+}
