@@ -7,8 +7,32 @@ import exit from "../../assets/exit.svg"
 import consultation from "../../assets/consultation.svg"
 import './menubar.css'
 import '../action'
+import { Canvas } from "@react-three/fiber";
+import { Suspense, useState } from 'react';
+import { OrbitControls } from '@react-three/drei';
+import { Scene } from './scene/Scene';
+import { Scene1 } from './scene/Scene1';
+import { Scene0 } from './scene/Scene0';
+import * as THREE from 'three';
 
 export default function MenuBar() {
+
+    const red = new THREE.Color("#dc143c");
+    const yellow = new THREE.Color("#ffff00");
+    const white = new THREE.Color("#ffffff");
+
+    const [currentColor, setCurrentColor] = useState(white);
+
+    const handleColorChange = (event, color) => {
+        console.log(color);
+        event.preventDefault();
+        if (color == 'red') {
+            setCurrentColor(red);
+        } else if (color == 'yellow') {
+            setCurrentColor(yellow);
+        }
+    };
+
     return (
         <>
             <div className="menubar">
@@ -66,10 +90,26 @@ export default function MenuBar() {
                 <div id="card_board" className="content">
                     <div className="models">
                         <div className="card">
-                            <img src="" alt="No Board" />
+                            <a onClick={event => handleColorChange(event, 'yellow')} href="#">
+                                <Canvas dpr={[1, 2]} camera={{ fov: 50 }} flat linear>
+                                    <color attach="background" args={['#aaa']} />
+                                    <Suspense fallback={null}>
+                                        <Scene currentColor={currentColor} />
+                                    </Suspense>
+                                    <OrbitControls autoRotate enableZoom={true} enablePan={true} />
+                                </Canvas>
+                            </a>
                         </div>
                         <div className="card">
-                            <img src="" alt="No Board" />
+                            <a onClick={event => handleColorChange(event, 'red')} href="#">
+                                <Canvas dpr={[1, 2]} camera={{ fov: 50 }} flat linear>
+                                    <color attach="background" args={['#aaa']} />
+                                    <Suspense fallback={null}>
+                                        <Scene0 currentColor={currentColor} />
+                                    </Suspense>
+                                    <OrbitControls autoRotate enableZoom={true} enablePan={true} />
+                                </Canvas>
+                            </a>
                         </div>
                     </div>
                     <div className="models">
@@ -193,6 +233,15 @@ export default function MenuBar() {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="main_content" style={{width: "100%"}}>
+                <Canvas dpr={[1, 2]} camera={{ fov: 50 }} flat linear>
+                    <color attach="background" args={['#aaa']} />
+                    <Suspense fallback={null}>
+                        <Scene1 currentColor={currentColor} />
+                    </Suspense>
+                    <OrbitControls autoRotate enableZoom={true} enablePan={true} />
+                </Canvas>
             </div>
         </>
     )

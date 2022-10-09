@@ -69,6 +69,8 @@ img {
     height: calc(100vh - 87px);
     transition: all 0.5s;
     display: none;
+    position: absolute;
+    z-index: 90;
 }
 
 .wid_0 {
@@ -102,6 +104,7 @@ img {
     width: 120px;
     height: 150px;
     display: inline-block;
+    cursor: pointer;
 }
 
 .card > img {
