@@ -89,7 +89,7 @@ img {
     justify-content: space-between;
     padding: 12.5px;
     border-bottom: 1px solid #aaa;
-    width: 300px;
+    width: 400px;
     background-color: #fff;
 }
 
@@ -98,11 +98,12 @@ img {
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 50px;
 }
 
 .card {
-    width: 120px;
-    height: 150px;
+    width: 170px;
+    height: 140px;
     display: inline-block;
     cursor: pointer;
 }
@@ -126,4 +127,33 @@ img {
 
 .show {
     display: block;
+}
+
+.card > h2 {
+    font-size: 12px;
+    color: #333;
+}
+
+.card > p {
+    font-size: 10px;
+    color: #333;
+}
+
+.addbtn {
+    padding: 5px 20px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    font-size: 12px !important;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    color: #333;
+    border: 2px solid #aaa;
+}
+
+select {
+    font-size: 10px;
+    outline-style: none;
+    color: #333;
 }

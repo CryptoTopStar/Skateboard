@@ -20,6 +20,8 @@ export default function MenuBar() {
     const red = new THREE.Color("#dc143c");
     const yellow = new THREE.Color("#ffff00");
     const white = new THREE.Color("#ffffff");
+    const blue = new THREE.Color("blue");
+    const green = new THREE.Color("green");
 
     const [currentColor, setCurrentColor] = useState(white);
 
@@ -30,6 +32,10 @@ export default function MenuBar() {
             setCurrentColor(red);
         } else if (color == 'yellow') {
             setCurrentColor(yellow);
+        } else if (color == 'blue') {
+            setCurrentColor(blue);
+        } else if (color == 'green') {
+            setCurrentColor(green);
         }
     };
 
@@ -92,40 +98,137 @@ export default function MenuBar() {
                         <div className="card">
                             <a onClick={event => handleColorChange(event, 'yellow')} href="#">
                                 <Canvas dpr={[1, 2]} camera={{ fov: 50 }} flat linear>
-                                    <color attach="background" args={['#aaa']} />
+                                    <color attach="background" args={['#eee']} />
                                     <Suspense fallback={null}>
                                         <Scene currentColor={currentColor} />
                                     </Suspense>
                                     <OrbitControls autoRotate enableZoom={true} enablePan={true} />
                                 </Canvas>
+
                             </a>
+                            <h2>SPLA Yellow deck</h2>
+                            <p>Deck length:
+                                <select>
+                                    <option>34"</option>
+                                    <option>30"</option>
+                                    <option>28"</option>
+                                    <option>25"</option>
+                                    <option>24"</option>
+                                    <option>20"</option>
+                                </select>
+                                <br />
+                                Deck width:
+                                <select>
+                                    <option>8.5"</option>
+                                    <option>7.5"</option>
+                                    <option>6.8"</option>
+                                    <option>6.5"</option>
+                                    <option>6.0"</option>
+                                    <option>5.7"</option>
+                                </select>
+                            </p>
+                            <p className="addbtn"><strong>Add to&nbsp;Model &nbsp;</strong> +</p>
                         </div>
                         <div className="card">
-                            <a onClick={event => handleColorChange(event, 'red')} href="#">
+                            <a onClick={event => handleColorChange(event, 'green')} href="#">
                                 <Canvas dpr={[1, 2]} camera={{ fov: 50 }} flat linear>
-                                    <color attach="background" args={['#aaa']} />
+                                    <color attach="background" args={['#eee']} />
                                     <Suspense fallback={null}>
                                         <Scene0 currentColor={currentColor} />
                                     </Suspense>
                                     <OrbitControls autoRotate enableZoom={true} enablePan={true} />
                                 </Canvas>
                             </a>
+                            <h2>SPLA Green deck</h2>
+                            <p>Deck length:
+                                <select>
+                                    <option>34"</option>
+                                    <option>30"</option>
+                                    <option>28"</option>
+                                    <option>25"</option>
+                                    <option>24"</option>
+                                    <option>20"</option>
+                                </select>
+                                <br />
+                                Deck width:
+                                <select>
+                                    <option>8.5"</option>
+                                    <option>7.5"</option>
+                                    <option>6.8"</option>
+                                    <option>6.5"</option>
+                                    <option>6.0"</option>
+                                    <option>5.7"</option>
+                                </select>
+                            </p>
+                            <p className="addbtn"><strong>Add to&nbsp;Model &nbsp;</strong> +</p>
                         </div>
                     </div>
                     <div className="models">
                         <div className="card">
-                            <img src="" alt="No Board" />
+                            <a onClick={event => handleColorChange(event, 'blue')} href="#">
+                                <Canvas dpr={[1, 2]} camera={{ fov: 50 }} flat linear>
+                                    <color attach="background" args={['#eee']} />
+                                    <Suspense fallback={null}>
+                                        <Scene0 currentColor={currentColor} />
+                                    </Suspense>
+                                    <OrbitControls autoRotate enableZoom={true} enablePan={true} />
+                                </Canvas>
+                            </a>
+                            <h2>SPLA Blue deck</h2>
+                            <p>Deck length:
+                                <select>
+                                    <option>34"</option>
+                                    <option>30"</option>
+                                    <option>28"</option>
+                                    <option>25"</option>
+                                    <option>24"</option>
+                                    <option>20"</option>
+                                </select>
+                                <br />
+                                Deck width:
+                                <select>
+                                    <option>8.5"</option>
+                                    <option>7.5"</option>
+                                    <option>6.8"</option>
+                                    <option>6.5"</option>
+                                    <option>6.0"</option>
+                                    <option>5.7"</option>
+                                </select>
+                            </p>
+                            <p className="addbtn"><strong>Add to&nbsp;Model &nbsp;</strong> +</p>
                         </div>
                         <div className="card">
-                            <img src="" alt="No Board" />
-                        </div>
-                    </div>
-                    <div className="models">
-                        <div className="card">
-                            <img src="" alt="No Board" />
-                        </div>
-                        <div className="card">
-                            <img src="" alt="No Board" />
+                            <a onClick={event => handleColorChange(event, 'red')} href="#">
+                                <Canvas dpr={[1, 2]} camera={{ fov: 50 }} flat linear>
+                                    <color attach="background" args={['#eee']} />
+                                    <Suspense fallback={null}>
+                                        <Scene0 currentColor={currentColor} />
+                                    </Suspense>
+                                    <OrbitControls autoRotate enableZoom={true} enablePan={true} />
+                                </Canvas>
+                            </a>
+                            <h2>SPLA Red deck</h2>
+                            <p>Deck length:
+                                <select>
+                                    <option>34"</option>
+                                    <option>30"</option>
+                                    <option>28"</option>
+                                    <option>25"</option>
+                                    <option>24"</option>
+                                    <option>20"</option>
+                                </select>
+                                <br />
+                                Deck width:
+                                <select>
+                                    <option>8.5"</option>
+                                    <option>7.5"</option>
+                                    <option>6.8"</option>
+                                    <option>6.5"</option>
+                                    <option>6.0"</option>
+                                    <option>5.7"</option>
+                                </select>
+                            </p>
+                            <p className="addbtn"><strong>Add to&nbsp;Model &nbsp;</strong> +</p>
                         </div>
                     </div>
                 </div>
@@ -234,7 +337,7 @@ export default function MenuBar() {
                     </div>
                 </div>
             </div>
-            <div className="main_content" style={{width: "100%"}}>
+            <div className="main_content" style={{ width: "100%" }}>
                 <Canvas dpr={[1, 2]} camera={{ fov: 50 }} flat linear>
                     <color attach="background" args={['#aaa']} />
                     <Suspense fallback={null}>
