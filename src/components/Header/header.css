@@ -16,7 +16,7 @@
     height: 60px;
 }
 
-.logo > img {
+.logo > a > img {
     max-width: 100%;
     width: auto;
     height: 100%;
@@ -26,8 +26,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    cursor: pointer;
 }
 
 .right_header > p {
     font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
 }

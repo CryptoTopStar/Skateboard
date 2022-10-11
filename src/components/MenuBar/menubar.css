@@ -157,3 +157,12 @@ select {
     outline-style: none;
     color: #333;
 }
+
+select:first-child {
+    width:42px;
+}
+
+.card > div {
+    display: flex;
+    flex-direction: column;
+}
